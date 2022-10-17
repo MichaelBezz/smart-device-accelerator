@@ -12,11 +12,11 @@ body {
 }
 
 html {
+  font-family: $ff-main;
   font-style: normal;
-  font-weight: 400;
   font-size: $fz-default;
-  line-height: 24px;
-  font-family: $ff-placeholder;
+  line-height: 1.38;
+  font-weight: 400;
   color: $color-default-black;
 
   -webkit-font-smoothing: antialiased;
@@ -111,13 +111,15 @@ input[type="number"] {
 // ios button \ inputs reset
 select,
 textarea,
-input:matches([type="email"],
+input:matches(
+  [type="email"],
   [type="number"],
   [type="password"],
   [type="search"],
   [type="tel"],
   [type="text"],
-  [type="url"]) {
+  [type="url"]
+) {
   appearance: none;
 }
 

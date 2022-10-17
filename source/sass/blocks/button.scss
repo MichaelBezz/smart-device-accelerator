@@ -21,3 +21,19 @@
     pointer-events: none;
   }
 }
+
+.button__text {
+  display: inline;
+
+  @include vp-767 {
+    display: none;
+  }
+
+  &--mobile {
+    display: none;
+
+    @include vp-767 {
+      display: inline;
+    }
+  }
+}
