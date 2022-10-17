@@ -1,0 +1,23 @@
+.button {
+  display: block;
+  padding: 10px 15px 12px;
+  font-family: $ff-secondary;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.14;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-deep-sky-blue;
+  background-color: $color-transparent;
+  border: 1px solid $color-deep-sky-blue;
+  border-radius: 3px;
+  transition: opacity $trans-default;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
