@@ -16,13 +16,28 @@
     content: "";
     width: 150px;
     height: 320px;
-    background-image: url("../img/decor/about-year.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
 
+    // классы js-webp и js-no-webp - это служебные классы для определения поддержки формата webp
+    // они не используются для стилизации этого блока, нужны для оптимизации фонового изображения
+    .js-webp & {
+      background-image: url("../img/decor/about-year.webp");
+    }
+
+    .js-no-webp & {
+      background-image: url("../img/decor/about-year.png");
+    }
+
     @include retina {
-      background-image: url("../img/decor/about-year@2x.png");
+      .js-webp & {
+        background-image: url("../img/decor/about-year@2x.webp");
+      }
+
+      .js-no-webp & {
+        background-image: url("../img/decor/about-year@2x.png");
+      }
     }
   }
 

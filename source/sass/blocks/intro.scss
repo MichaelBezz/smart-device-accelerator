@@ -1,42 +1,94 @@
 .intro {
   background-color: $color-black-pearl;
-  background-image:
-    url("../img/decor/intro-mask.svg"),
-    url("../img/decor/intro-background-desktop.jpg");
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
 
-  @include vp-1023 {
+  // классы js-webp и js-no-webp - это служебные классы для определения поддержки формата webp
+  // они не используются для стилизации этого блока, нужны для оптимизации фонового изображения
+  .js-webp & {
     background-image:
       url("../img/decor/intro-mask.svg"),
-      url("../img/decor/intro-background-tablet.jpg");
+      url("../img/decor/intro-background-desktop.webp");
+  }
+
+  .js-no-webp & {
+    background-image:
+      url("../img/decor/intro-mask.svg"),
+      url("../img/decor/intro-background-desktop.jpg");
+  }
+
+  @include vp-1023 {
+    .js-webp & {
+      background-image:
+        url("../img/decor/intro-mask.svg"),
+        url("../img/decor/intro-background-tablet.webp");
+    }
+
+    .js-no-webp & {
+      background-image:
+        url("../img/decor/intro-mask.svg"),
+        url("../img/decor/intro-background-tablet.jpg");
+    }
   }
 
   @include vp-767 {
     min-width: 320px;
-    background-image:
-      url("../img/decor/intro-mask.svg"),
-      url("../img/decor/intro-background-mobile.jpg");
+
+    .js-webp & {
+      background-image:
+        url("../img/decor/intro-mask.svg"),
+        url("../img/decor/intro-background-mobile.webp");
+    }
+
+    .js-no-webp & {
+      background-image:
+        url("../img/decor/intro-mask.svg"),
+        url("../img/decor/intro-background-mobile.jpg");
+    }
   }
 
   @include retina {
     @include vp-767 {
-      background-image:
-        url("../img/decor/intro-mask.svg"),
-        url("../img/decor/intro-background-mobile@2x.jpg");
+      .js-webp & {
+        background-image:
+          url("../img/decor/intro-mask.svg"),
+          url("../img/decor/intro-background-mobile@2x.webp");
+      }
+
+      .js-no-webp & {
+        background-image:
+          url("../img/decor/intro-mask.svg"),
+          url("../img/decor/intro-background-mobile@2x.jpg");
+      }
     }
 
     @include vp-1023 {
-      background-image:
-        url("../img/decor/intro-mask.svg"),
-        url("../img/decor/intro-background-tablet@2x.jpg");
+      .js-webp & {
+        background-image:
+          url("../img/decor/intro-mask.svg"),
+          url("../img/decor/intro-background-tablet@2x.webp");
+      }
+
+      .js-no-webp & {
+        background-image:
+          url("../img/decor/intro-mask.svg"),
+          url("../img/decor/intro-background-tablet@2x.jpg");
+      }
     }
 
     @include vp-1024 {
-      background-image:
-        url("../img/decor/intro-mask.svg"),
-        url("../img/decor/intro-background-desktop@2x.jpg");
+      .js-webp & {
+        background-image:
+          url("../img/decor/intro-mask.svg"),
+          url("../img/decor/intro-background-desktop@2x.webp");
+      }
+
+      .js-no-webp & {
+        background-image:
+          url("../img/decor/intro-mask.svg"),
+          url("../img/decor/intro-background-desktop@2x.jpg");
+      }
     }
   }
 }
