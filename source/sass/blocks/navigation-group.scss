@@ -100,6 +100,24 @@
   line-height: 1.35;
   color: rgba($color-default-white, 0.7);
 
+  &:hover {
+    color: $color-deep-sky-blue;
+  }
+
+  &:focus {
+    outline: auto;
+  }
+
+  &:focus-visible {
+    color: $color-deep-sky-blue;
+    outline: 1px solid $color-deep-sky-blue;
+  }
+
+  &:active {
+    color: $color-alice-blue-ff;
+    outline: none;
+  }
+
   @include vp-767 {
     font-size: 14px;
     line-height: 1.35;

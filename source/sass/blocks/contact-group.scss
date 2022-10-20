@@ -112,6 +112,24 @@
     line-height: 1.56;
   }
 
+  &:hover:not(.contact-group__link--address) {
+    color: $color-deep-sky-blue;
+  }
+
+  &:focus {
+    outline: auto;
+  }
+
+  &:focus-visible:not(.contact-group__link--address) {
+    color: $color-deep-sky-blue;
+    outline: 1px solid $color-deep-sky-blue;
+  }
+
+  &:active:not(.contact-group__link--address) {
+    color: $color-alice-blue-ff;
+    outline: none;
+  }
+
   @include vp-1023 {
     padding: 4px 2px;
   }
