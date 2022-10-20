@@ -9,35 +9,76 @@
   text-align: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: $color-deep-sky-blue;
-  background-color: $color-transparent;
+  color: $color-alice-blue;
+  background-color: $color-deep-sky-blue;
   border: 1px solid $color-deep-sky-blue;
   border-radius: 3px;
   transition: opacity $trans-default;
   user-select: none;
   cursor: pointer;
 
-  &--dark {
-    color: $color-alice-blue;
+  &:hover:not(.button--disabled):not(:disabled),
+  &:focus-visible:not(.button--disabled):not(:disabled) {
+    color: $color-deep-sky-blue;
+    background-color: $color-alice-blue;
     border-color: $color-alice-blue;
   }
 
-  &--dark:hover:not(.button--disabled):not(:disabled) {
+  &:focus-visible:not(.button--disabled):not(:disabled) {
+    outline: none;
+  }
+
+  &:active:not(.button--disabled):not(:disabled) {
     color: $color-deep-sky-blue;
-    border-color: $color-deep-sky-blue;
+    background-color: $color-silver;
+    border-color: $color-silver;
+    outline: none;
+  }
+
+  &--dark {
+    color: $color-alice-blue;
+    background-color: $color-black-pearl;
+    border-color: $color-alice-blue;
+  }
+
+  &--dark:hover:not(.button--disabled):not(:disabled),
+  &--dark:focus-visible:not(.button--disabled):not(:disabled) {
+    color: $color-black-pearl;
+    background-color: $color-alice-blue;
   }
 
   &--dark:focus-visible:not(.button--disabled):not(:disabled) {
-    color: $color-deep-sky-blue;
-    border-color: $color-deep-sky-blue;
     outline: none;
   }
 
   &--dark:active:not(.button--disabled):not(:disabled) {
-    color: $color-silver;
+    background-color: $color-silver;
     border-color: $color-silver;
     outline: none;
   }
+
+  // &--light {
+  //   color: $color-deep-sky-blue;
+  //   background-color: $color-transparent;
+  //   border-color: $color-deep-sky-blue;
+  // }
+
+  // &--light:hover:not(.button--disabled):not(:disabled) {
+  //   color: $color-deep-sky-blue;
+  //   border-color: $color-deep-sky-blue;
+  // }
+
+  // &--light:focus-visible:not(.button--disabled):not(:disabled) {
+  //   color: $color-deep-sky-blue;
+  //   border-color: $color-deep-sky-blue;
+  //   outline: none;
+  // }
+
+  // &--light:active:not(.button--disabled):not(:disabled) {
+  //   color: $color-silver;
+  //   border-color: $color-silver;
+  //   outline: none;
+  // }
 
   &:disabled {
     opacity: 0.5;
