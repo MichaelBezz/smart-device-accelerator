@@ -31,7 +31,6 @@
 
   @include vp-767 {
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    grid-template-rows: repeat(2, 340px) repeat(2, 325px);
   }
 }
 
@@ -54,11 +53,19 @@
   @include vp-1023 {
     min-height: 360px;
     padding: 90px 45px 30px;
+
+    &--pt-small {
+      padding-top: 84px;
+    }
   }
 
   @include vp-767 {
-    min-height: 325px;
-    padding: 76px 30px 35px;
+    min-height: 340px;
+    padding: 80px 30px 35px;
+
+    &--mh-small {
+      min-height: 325px;
+    }
   }
 }
 
@@ -97,7 +104,7 @@
 
 .advantages__title {
   margin: 0;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   font-family: $ff-secondary;
   font-style: normal;
   font-size: 24px;
@@ -106,7 +113,9 @@
   color: $color-deep-sky-blue;
 
   @include vp-1023 {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    font-size: 24px;
+    line-height: 1.42;
   }
 
   @include vp-767 {
