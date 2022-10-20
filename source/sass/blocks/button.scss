@@ -52,33 +52,34 @@
   }
 
   &--dark:active:not(.button--disabled):not(:disabled) {
+    color: $color-black-pearl;
     background-color: $color-silver;
     border-color: $color-silver;
     outline: none;
   }
 
-  // &--light {
-  //   color: $color-deep-sky-blue;
-  //   background-color: $color-transparent;
-  //   border-color: $color-deep-sky-blue;
-  // }
+  &--light {
+    color: $color-deep-sky-blue;
+    background-color: $color-default-white;
+    border-color: $color-deep-sky-blue;
+  }
 
-  // &--light:hover:not(.button--disabled):not(:disabled) {
-  //   color: $color-deep-sky-blue;
-  //   border-color: $color-deep-sky-blue;
-  // }
+  &--light:hover:not(.button--disabled):not(:disabled),
+  &--light:focus-visible:not(.button--disabled):not(:disabled) {
+    color: $color-default-white;
+    background-color: $color-deep-sky-blue;
+  }
 
-  // &--light:focus-visible:not(.button--disabled):not(:disabled) {
-  //   color: $color-deep-sky-blue;
-  //   border-color: $color-deep-sky-blue;
-  //   outline: none;
-  // }
+  &--light:focus-visible:not(.button--disabled):not(:disabled) {
+    outline: none;
+  }
 
-  // &--light:active:not(.button--disabled):not(:disabled) {
-  //   color: $color-silver;
-  //   border-color: $color-silver;
-  //   outline: none;
-  // }
+  &--light:active:not(.button--disabled):not(:disabled) {
+    color: $color-default-white;
+    background-color: $color-silver;
+    border-color: $color-silver;
+    outline: none;
+  }
 
   &:disabled {
     opacity: 0.5;
