@@ -48,8 +48,7 @@
 .form__control label {
   font-size: 14px;
   line-height: 1.14;
-  color: $color-default-white;
-  opacity: 0.8;
+  color: rgba($color-default-white, 0.8);
 }
 
 .form__control--input input,
