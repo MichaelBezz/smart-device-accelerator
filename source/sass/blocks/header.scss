@@ -34,6 +34,24 @@
 }
 
 .header__logo {
+  &[href]:hover {
+    opacity: 0.6;
+  }
+
+  &[href]:focus {
+    outline: auto;
+  }
+
+  &[href]:focus-visible {
+    outline: none;
+    opacity: 0.6;
+  }
+
+  &[href]:active {
+    outline: none;
+    opacity: 0.3;
+  }
+
   @include vp-767 {
     padding: 5px 6px;
   }
@@ -62,8 +80,6 @@
 .header__button {
   min-width: 160px;
   margin-top: 5px;
-  color: $color-alice-blue;
-  border-color: $color-alice-blue;
 
   @include vp-1023 {
     display: none;

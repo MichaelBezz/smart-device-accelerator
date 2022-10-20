@@ -1,12 +1,12 @@
 .contact {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(225px, auto));
-  justify-content: end;
   column-gap: 30px;
   row-gap: 10px;
 
   @include vp-1023 {
     grid-template-columns: repeat(auto-fit, minmax(40px, auto));
+    justify-content: end;
     column-gap: 20px;
   }
 }
@@ -21,11 +21,33 @@
   line-height: 1.13;
   color: $color-alice-blue;
 
+  &:hover {
+    color: $color-deep-sky-blue;
+  }
+
+  &:focus {
+    outline: auto;
+  }
+
+  &:focus-visible {
+    color: $color-deep-sky-blue;
+    outline: 1px solid $color-deep-sky-blue;
+  }
+
+  &:active {
+    color: $color-silver;
+    outline: none;
+  }
+
   @include vp-1023 {
     width: 40px;
     height: 40px;
     padding: 10px;
   }
+}
+
+.contact__item:active .contact__icon {
+  fill: $color-silver;
 }
 
 .contact__item span {

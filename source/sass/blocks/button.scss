@@ -14,9 +14,38 @@
   border: 1px solid $color-deep-sky-blue;
   border-radius: 3px;
   transition: opacity $trans-default;
+  user-select: none;
   cursor: pointer;
 
+  &--dark {
+    color: $color-alice-blue;
+    border-color: $color-alice-blue;
+  }
+
+  &--dark:hover:not(.button--disabled):not(:disabled) {
+    color: $color-deep-sky-blue;
+    border-color: $color-deep-sky-blue;
+  }
+
+  &--dark:focus-visible:not(.button--disabled):not(:disabled) {
+    color: $color-deep-sky-blue;
+    border-color: $color-deep-sky-blue;
+    outline: none;
+  }
+
+  &--dark:active:not(.button--disabled):not(:disabled) {
+    color: $color-silver;
+    border-color: $color-silver;
+    outline: none;
+  }
+
   &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  // Использовать класс, если в качестве <button> использован тег <a>
+  &--disabled {
     opacity: 0.5;
     pointer-events: none;
   }
