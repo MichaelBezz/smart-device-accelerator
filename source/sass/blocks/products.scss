@@ -7,7 +7,7 @@
 }
 
 .products__wrapper {
-  padding: 64px 30px 140px;
+  padding: 66px 30px 140px;
 
   @include vp-1023 {
     padding: 56px 50px 75px;
@@ -20,7 +20,7 @@
 
 .products__title {
   margin: 0;
-  margin-bottom: 56px;
+  margin-bottom: 53px;
   font-family: $ff-secondary;
   font-style: normal;
   font-size: 36px;
