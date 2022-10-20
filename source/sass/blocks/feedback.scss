@@ -8,7 +8,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba($color-black-pearl, 0.5);
-    clip-path: polygon(51% 0, 0 0, 0 100%);
+    clip-path: polygon(50.6% 0, 0 0, 0 100%);
   }
 
   @include vp-1023 {
@@ -39,10 +39,29 @@
     width: 85%;
     max-width: 510px;
     height: 285px;
-    background-image: url("../img/decor/airplane.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
+    // классы js-webp и js-no-webp - это служебные классы для определения поддержки формата webp
+    // они не используются для стилизации этого блока, нужны для оптимизации фонового изображения
+    .js-webp & {
+      background-image: url("../img/decor/airplane.webp");
+    }
+
+    .js-no-webp & {
+      background-image: url("../img/decor/airplane.png");
+    }
+
+    @include retina {
+      .js-webp & {
+        background-image: url("../img/decor/airplane@2x.webp");
+      }
+
+      .js-no-webp & {
+        background-image: url("../img/decor/airplane@2x.png");
+      }
+    }
   }
 
   @include vp-1023 {

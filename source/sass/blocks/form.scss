@@ -60,10 +60,33 @@
   font-size: 16px;
   line-height: 1.38;
   font-weight: 400;
-  color: $color-black-pearl;
+  color: $color-default-white;
   background: rgba($color-black-pearl, 0.15);
   border: 0;
   border-radius: 3px;
+
+  &:hover:not(:focus):not(:focus-visible) {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: auto;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-default-white;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    opacity: 0.8;
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
 }
 
 .form__control--input input::placeholder,
@@ -131,15 +154,32 @@
   }
 }
 
+.form__control--checkbox:hover {
+  opacity: 0.8;
+}
+
+.form__control--checkbox:focus-within {
+  outline: 1px solid $color-default-white;
+}
+
+.form__control--checkbox input:active + label {
+  opacity: 0.6;
+  outline: none;
+}
+
+.form__control--checkbox input:disabled + label {
+  opacity: 0.3;
+  cursor: default;
+}
+
 .form__button {
   grid-area: fr-button;
   align-self: start;
   max-width: 265px;
-  padding: 15px 25px 12px;
+  padding: 16px 25px 10px;
   font-size: 16px;
   line-height: 1.19;
-  color: $color-default-white;
-  background: $color-black-pearl;
+  border-color: $color-black-pearl;
 
   @include vp-767 {
     min-width: 270px;
