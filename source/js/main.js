@@ -1,5 +1,6 @@
 import {iosVhFix} from './utils/ios-vh-fix.js';
 import {checkWebp} from './modules/background-webp.js';
+import {createSmoothScroll} from './modules/scroll.js';
 import {initModals} from './modules/modals/init-modals.js';
 
 // ---------------------------------
@@ -11,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   iosVhFix();
   checkWebp();
+  createSmoothScroll();
 
   // Modules
   // ---------------------------------
