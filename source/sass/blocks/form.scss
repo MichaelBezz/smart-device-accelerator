@@ -2,12 +2,25 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(236px, 1fr));
   grid-template-areas:
+    "fr-header   fr-header   "
     "fr-name     fr-telephone"
     "fr-textarea fr-textarea "
     "fr-button   fr-checkbox ";
   column-gap: 30px;
   row-gap: 20px;
   padding: 0 10px;
+
+  &--modal {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "fr-header   "
+      "fr-name     "
+      "fr-telephone"
+      "fr-textarea "
+      "fr-button   "
+      "fr-checkbox ";
+    padding: 0;
+  }
 
   @include vp-1023 {
     padding: 0;
@@ -16,6 +29,7 @@
   @include vp-767 {
     grid-template-columns: 1fr;
     grid-template-areas:
+      "fr-header   "
       "fr-name     "
       "fr-telephone"
       "fr-textarea "
@@ -25,24 +39,100 @@
   }
 }
 
+.form__header {
+  grid-area: fr-header;
+}
+
+.form__title {
+  margin: 0;
+  margin-bottom: 14px;
+  margin-left: -5px;
+  font-family: $ff-secondary;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 1.42;
+  font-weight: 400;
+  color: $color-default-white;
+
+  &--modal {
+    margin: 0;
+    margin-bottom: 2px;
+    font-size: 30px;
+    line-height: 1.4;
+  }
+
+  @include vp-1023 {
+    margin-bottom: 8px;
+    margin-left: 0;
+  }
+
+  @include vp-767 {
+    font-size: 30px;
+    line-height: 1.4;
+  }
+}
+
+.form__text {
+  margin: 0;
+  margin-bottom: 14px;
+  font-size: 16px;
+  line-height: 1.37;
+  color: $color-default-white;
+
+  &--modal {
+    margin-bottom: 18px;
+  }
+
+  @include vp-1023 {
+    margin-bottom: 4px;
+    padding: 0;
+  }
+
+  @include vp-767 {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.34;
+  }
+}
+
 .form__control {
   margin: 0;
+}
 
-  &--name {
-    grid-area: fr-name;
+.form__control--name {
+  grid-area: fr-name;
+}
+
+.form__control--telephone {
+  grid-area: fr-telephone;
+}
+
+.form__control--textarea {
+  grid-area: fr-textarea;
+  margin-bottom: 8px;
+
+  @include vp-767 {
+    margin-bottom: 4px;
+  }
+}
+
+.form__control--checkbox {
+  grid-area: fr-checkbox;
+  margin-top: 11px;
+
+  @include vp-1023 {
+    margin-top: 6px;
+    margin-left: -10px;
   }
 
-  &--telephone {
-    grid-area: fr-telephone;
+  @include vp-767 {
+    margin-top: -2px;
+    margin-left: -6px;
   }
+}
 
-  &--textarea {
-    grid-area: fr-textarea;
-  }
-
-  &--checkbox {
-    grid-area: fr-checkbox;
-  }
+.form__control--modal {
+  margin: 0;
 }
 
 .form__control label {
@@ -101,7 +191,6 @@
 
 .form__control--textarea textarea {
   min-height: 155px;
-  margin-bottom: 8px;
   padding: 24px 15px;
 
   @include vp-1023 {
@@ -110,7 +199,6 @@
 
   @include vp-767 {
     min-height: 180px;
-    margin-bottom: 4px;
     padding: 24px 15px;
   }
 }
@@ -118,7 +206,6 @@
 .form__control--checkbox label {
   position: relative;
   display: block;
-  margin-top: 11px;
   padding: 5px;
   padding-left: 36px;
 
@@ -132,16 +219,6 @@
     border: 1px solid $color-default-white;
     border-radius: 2px;
     transform: translateY(-60%);
-  }
-
-  @include vp-1023 {
-    margin-top: 6px;
-    margin-left: -10px;
-  }
-
-  @include vp-767 {
-    margin-top: -2px;
-    margin-left: -6px;
   }
 }
 
@@ -181,8 +258,16 @@
   line-height: 1.19;
   border-color: $color-black-pearl;
 
+  &--modal {
+    max-width: 100%;
+  }
+
   @include vp-767 {
     min-width: 270px;
     max-width: 50%;
+
+    &--modal {
+      min-width: 100%;
+    }
   }
 }
