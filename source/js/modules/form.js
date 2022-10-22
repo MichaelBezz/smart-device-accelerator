@@ -1,4 +1,21 @@
 const forms = document.querySelectorAll('.form');
+const headerButton = document.querySelector('.header__button');
+const modalFormName = document.querySelector('#md-form-name');
+
+const ALLOWED_KEYS = [
+  'Backspace',
+  'Tab',
+  'ArrowUp',
+  'ArrowRight',
+  'ArrowDown',
+  'ArrowLeft'
+];
+
+export const setModalFormFocus = () => {
+  headerButton.addEventListener('click', () => {
+    setTimeout(() => modalFormName.focus(), 500);
+  });
+};
 
 const initializeValidation = (form) => {
   const formPhone = form.querySelector('#form-phone');
@@ -7,7 +24,7 @@ const initializeValidation = (form) => {
     const phonePattern = /[0-9]/;
 
     const onFormPhoneKeydown = (event) => {
-      if (!phonePattern.test(event.key) && event.key !== 'Backspace' && event.key !== 'Tab') {
+      if (!phonePattern.test(event.key) && !ALLOWED_KEYS.includes(event.key)) {
         event.preventDefault();
       }
 

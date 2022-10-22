@@ -3,7 +3,7 @@ import {checkWebpFormat} from './utils/webp-format.js';
 import {createSmoothScroll} from './utils/scroll-smooth.js';
 import {initModals} from './modules/modals/init-modals.js';
 import {initializeToggleContent} from './modules/about.js';
-import {initializeFormsValidation} from './modules/form.js';
+import {setModalFormFocus, initializeFormsValidation} from './modules/form.js';
 import {initializeAccordion} from './modules/footer.js';
 
 // ---------------------------------
@@ -38,6 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
     breakpointChecker();
 
     initModals();
+    setModalFormFocus();
     initializeFormsValidation();
 
     // window.addEventListener('resize', breakpointChecker);
