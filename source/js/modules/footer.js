@@ -19,8 +19,11 @@ export const initializeAccordion = () => {
 
   if (accordionButtons) {
     [...accordionButtons].forEach((accordionButton) => {
+      const accordion = accordionButton.closest('[data-accordion]');
+      accordion.classList.remove('js-exception');
+      accordion.classList.add('is-close');
+
       accordionButton.addEventListener('click', () => onAccordionButtonClick(accordionButton));
-      accordionButton.closest('[data-accordion]').classList.add('is-close');
     });
   }
 };

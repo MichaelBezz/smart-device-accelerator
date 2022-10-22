@@ -1,6 +1,6 @@
-const aboutContent = document.querySelector('.about__content');
-const aboutButton = document.querySelector('.about__button');
-const aboutDefaultContent = document.querySelectorAll('[data-js=about-content-default]');
+const aboutContent = document.querySelector('[data-about-content]');
+const aboutButton = document.querySelector('[data-about-button]');
+const aboutDefaultContent = document.querySelectorAll('[data-about-content-default]');
 
 export const initializeToggleContent = (isMobile = false) => {
   if (aboutContent && aboutButton) {

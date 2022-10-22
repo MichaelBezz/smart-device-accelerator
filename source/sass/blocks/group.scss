@@ -49,6 +49,11 @@
   }
 }
 
+.js-exception .group__header::before,
+.js-exception .group__header::after {
+  content: initial;
+}
+
 .group__title {
   margin: 0;
   margin-bottom: 18px;
@@ -166,11 +171,13 @@
 
 // классы для оживления аккордеона
 .group__content {
-  .is-open & {
-    display: block;
-  }
+  @include vp-767 {
+    .is-open & {
+      display: block;
+    }
 
-  .is-close & {
-    display: none;
+    .is-close & {
+      display: none;
+    }
   }
 }

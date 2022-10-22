@@ -1,6 +1,6 @@
-const forms = document.querySelectorAll('.form');
-const headerButton = document.querySelector('.header__button');
-const modalFormName = document.querySelector('#md-form-name');
+const forms = document.querySelectorAll('[data-form]');
+const headerButton = document.querySelector('[data-open-modal=feedback]');
+const modalFormName = document.querySelector('[data-md-form-name]');
 
 const ALLOWED_KEYS = [
   'Backspace',
@@ -12,9 +12,11 @@ const ALLOWED_KEYS = [
 ];
 
 export const setModalFormFocus = () => {
-  headerButton.addEventListener('click', () => {
-    setTimeout(() => modalFormName.focus(), 500);
-  });
+  if (headerButton && modalFormName) {
+    headerButton.addEventListener('click', () => {
+      setTimeout(() => modalFormName.focus(), 500);
+    });
+  }
 };
 
 const initializeValidation = (form) => {
