@@ -3,7 +3,7 @@
   grid-template-columns: repeat(2, minmax(236px, 1fr));
   grid-template-areas:
     "fr-header   fr-header   "
-    "fr-name     fr-telephone"
+    "fr-name     fr-phone    "
     "fr-textarea fr-textarea "
     "fr-button   fr-checkbox ";
   column-gap: 30px;
@@ -13,12 +13,12 @@
   &--modal {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "fr-header   "
-      "fr-name     "
-      "fr-telephone"
-      "fr-textarea "
-      "fr-button   "
-      "fr-checkbox ";
+      "fr-header  "
+      "fr-name    "
+      "fr-phone   "
+      "fr-textarea"
+      "fr-button  "
+      "fr-checkbox";
     padding: 0;
   }
 
@@ -29,12 +29,12 @@
   @include vp-767 {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "fr-header   "
-      "fr-name     "
-      "fr-telephone"
-      "fr-textarea "
-      "fr-button   "
-      "fr-checkbox ";
+      "fr-header  "
+      "fr-name    "
+      "fr-phone   "
+      "fr-textarea"
+      "fr-button  "
+      "fr-checkbox";
     column-gap: 0;
   }
 }
@@ -103,8 +103,8 @@
   grid-area: fr-name;
 }
 
-.form__control--telephone {
-  grid-area: fr-telephone;
+.form__control--phone {
+  grid-area: fr-phone;
 }
 
 .form__control--textarea {

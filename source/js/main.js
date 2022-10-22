@@ -2,6 +2,7 @@ import {iosVhFix} from './utils/ios-vh-fix.js';
 import {checkWebpFormat} from './utils/webp-format.js';
 import {createSmoothScroll} from './utils/scroll-smooth.js';
 import {initializeToggleContent} from './modules/about.js';
+import {initializeFormsValidation} from './modules/form.js';
 import {initModals} from './modules/modals/init-modals.js';
 
 // ---------------------------------
@@ -35,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     breakpointChecker();
 
     initModals();
+    initializeFormsValidation();
 
     // window.addEventListener('resize', breakpointChecker);
   });
