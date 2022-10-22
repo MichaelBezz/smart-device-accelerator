@@ -43,13 +43,13 @@
     background-position: center;
     background-size: contain;
 
-    // классы js-webp и js-no-webp - это служебные классы для определения поддержки формата webp
+    // классы js-webp и js-webp-exception - это служебные классы для определения поддержки формата webp
     // они не используются для стилизации этого блока, нужны для оптимизации фонового изображения
     .js-webp & {
       background-image: url("../img/decor/airplane.webp");
     }
 
-    .js-no-webp & {
+    .js-webp-exception & {
       background-image: url("../img/decor/airplane.png");
     }
 
@@ -58,7 +58,7 @@
         background-image: url("../img/decor/airplane@2x.webp");
       }
 
-      .js-no-webp & {
+      .js-webp-exception & {
         background-image: url("../img/decor/airplane@2x.png");
       }
     }
