@@ -1,0 +1,176 @@
+.group {
+  @include vp-767 {
+    border-bottom: 1px solid rgba($color-alice-blue-ff, 0.7);
+
+    &--navigation {
+      border-top: 1px solid rgba($color-alice-blue-ff, 0.7);
+    }
+  }
+}
+
+.group__header {
+  @include vp-767 {
+    position: relative;
+    min-height: 58px;
+    padding: 22px 25px 20px;
+    padding-right: 60px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      content: "";
+      width: 15px;
+      height: 1px;
+      background-color: $color-silver;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .is-open & {
+      &::after {
+        content: initial;
+      }
+    }
+
+    .is-close & {
+      &::after {
+        content: "";
+      }
+    }
+  }
+}
+
+.group__title {
+  margin: 0;
+  margin-bottom: 18px;
+  font-family: $ff-secondary;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.06;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-default-white;
+
+  @include vp-767 {
+    margin: 0;
+  }
+}
+
+.group--contact .group__title {
+  padding: 0 5px;
+
+  @include vp-1023 {
+    padding: 0 2px;
+  }
+
+  @include vp-767 {
+    padding: 0;
+  }
+}
+
+.group--navigation .group__content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, auto));
+  column-gap: 30px;
+
+  @include vp-1023 {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  @include vp-767 {
+    padding: 0 25px 20px;
+  }
+}
+
+.group--contact .group__content {
+  @include vp-767 {
+    padding: 0 25px 14px;
+  }
+}
+
+.group__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.group__link {
+  display: block;
+  padding: 4px 0;
+  font-size: 16px;
+  line-height: 1.35;
+  color: rgba($color-default-white, 0.7);
+
+  &:hover:not(.group__link--address) {
+    color: $color-deep-sky-blue;
+  }
+
+  &:focus {
+    outline: auto;
+  }
+
+  &:focus-visible:not(.group__link--address) {
+    color: $color-deep-sky-blue;
+    outline: 1px solid $color-deep-sky-blue;
+  }
+
+  &:active:not(.group__link--address) {
+    color: $color-alice-blue-ff;
+    outline: none;
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 1.35;
+  }
+}
+
+.group--contact .group__link {
+  padding: 3px 5px;
+
+  &--address {
+    font-style: normal;
+  }
+
+  &--phone {
+    font-size: 16px;
+    line-height: 1.56;
+  }
+
+  @include vp-1023 {
+    padding: 3px 2px;
+  }
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 1.35;
+    padding: 5px 0;
+
+    &--address {
+      padding: 0;
+      margin-bottom: 14px;
+    }
+  }
+}
+
+// классы для оживления аккордеона
+.group__content {
+  .is-open & {
+    display: block;
+  }
+
+  .is-close & {
+    display: none;
+  }
+}

@@ -80,20 +80,24 @@
   align-self: start;
 }
 
-.footer__navigation {
-  grid-area: ft-navigation;
-  margin-top: 8px;
-
-  @include vp-1023 {
-    margin-top: 0;
+.footer__group {
+  &--navigation {
+    grid-area: ft-navigation;
+    margin-top: 8px;
   }
-}
 
-.footer__contact {
-  grid-area: ft-contact;
-  margin-top: 8px;
+  &--contact {
+    grid-area: ft-contact;
+    margin-top: 8px;
+  }
 
   @include vp-1023 {
-    margin-top: 0;
+    &--navigation {
+      margin-top: 0;
+    }
+
+    &--contact {
+      margin-top: 0;
+    }
   }
 }

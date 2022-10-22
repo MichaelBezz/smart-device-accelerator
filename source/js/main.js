@@ -1,9 +1,10 @@
 import {iosVhFix} from './utils/ios-vh-fix.js';
 import {checkWebpFormat} from './utils/webp-format.js';
 import {createSmoothScroll} from './utils/scroll-smooth.js';
+import {initModals} from './modules/modals/init-modals.js';
 import {initializeToggleContent} from './modules/about.js';
 import {initializeFormsValidation} from './modules/form.js';
-import {initModals} from './modules/modals/init-modals.js';
+import {initializeAccordion} from './modules/footer.js';
 
 // ---------------------------------
 
@@ -27,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const breakpointChecker = () => {
       if (breakpoint.matches) {
         initializeToggleContent(true);
+        initializeAccordion();
       } else {
         initializeToggleContent();
       }
