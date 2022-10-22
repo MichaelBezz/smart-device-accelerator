@@ -1,17 +1,14 @@
 .intro {
   background-color: $color-black-pearl;
+  background-image:
+    url("../img/decor/intro-mask.svg"),
+    url("../img/decor/intro-background-desktop.webp");
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
 
-  // классы js-webp и js-webp-exception - это служебные классы для определения поддержки формата webp
-  // они не используются для стилизации этого блока, нужны для оптимизации фонового изображения
-  .js-webp & {
-    background-image:
-      url("../img/decor/intro-mask.svg"),
-      url("../img/decor/intro-background-desktop.webp");
-  }
-
+  // класс js-webp-exception - это служебный класс для определения поддержки формата webp
+  // он не используются для стилизации этого блока, нужен для оптимизации фонового изображения
   .js-webp-exception & {
     background-image:
       url("../img/decor/intro-mask.svg"),
@@ -19,11 +16,9 @@
   }
 
   @include vp-1023 {
-    .js-webp & {
-      background-image:
-        url("../img/decor/intro-mask.svg"),
-        url("../img/decor/intro-background-tablet.webp");
-    }
+    background-image:
+      url("../img/decor/intro-mask.svg"),
+      url("../img/decor/intro-background-tablet.webp");
 
     .js-webp-exception & {
       background-image:
@@ -34,12 +29,9 @@
 
   @include vp-767 {
     min-width: 320px;
-
-    .js-webp & {
-      background-image:
-        url("../img/decor/intro-mask.svg"),
-        url("../img/decor/intro-background-mobile.webp");
-    }
+    background-image:
+      url("../img/decor/intro-mask.svg"),
+      url("../img/decor/intro-background-mobile.webp");
 
     .js-webp-exception & {
       background-image:
@@ -50,11 +42,9 @@
 
   @include retina {
     @include vp-767 {
-      .js-webp & {
-        background-image:
-          url("../img/decor/intro-mask.svg"),
-          url("../img/decor/intro-background-mobile@2x.webp");
-      }
+      background-image:
+        url("../img/decor/intro-mask.svg"),
+        url("../img/decor/intro-background-mobile@2x.webp");
 
       .js-webp-exception & {
         background-image:
@@ -64,11 +54,9 @@
     }
 
     @include vp-1023 {
-      .js-webp & {
-        background-image:
-          url("../img/decor/intro-mask.svg"),
-          url("../img/decor/intro-background-tablet@2x.webp");
-      }
+      background-image:
+        url("../img/decor/intro-mask.svg"),
+        url("../img/decor/intro-background-tablet@2x.webp");
 
       .js-webp-exception & {
         background-image:
@@ -78,11 +66,9 @@
     }
 
     @include vp-1024 {
-      .js-webp & {
-        background-image:
-          url("../img/decor/intro-mask.svg"),
-          url("../img/decor/intro-background-desktop@2x.webp");
-      }
+      background-image:
+        url("../img/decor/intro-mask.svg"),
+        url("../img/decor/intro-background-desktop@2x.webp");
 
       .js-webp-exception & {
         background-image:
