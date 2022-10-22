@@ -28,7 +28,8 @@
   padding: 5px;
 }
 
-.social__link:hover .social__icon {
+.social__link:hover .social__icon,
+.social__link:focus-visible .social__icon {
   fill: $color-deep-sky-blue;
 }
 
