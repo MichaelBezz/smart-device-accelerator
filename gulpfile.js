@@ -75,6 +75,8 @@ const copy = () => {
     'source/fonts/**',
     'source/img/**',
     'source/favicon/**',
+    'source/*.ico',
+    'source/*.webmanifest',
   ], {
     base: 'source',
   })
@@ -128,7 +130,7 @@ const start = gulp.series(build, syncServer);
 
 const createWebp = () => {
   const root = '';
-  return gulp.src(`source/img/${root}**/*.{png,jpg}`)
+  return gulp.src(`source/img/${root}**/*.{png,jpg}`, '!source/img/favicon/*.{png,jpg}')
     .pipe(webp({quality: 90}))
     .pipe(gulp.dest(`source/img/${root}`));
 };
