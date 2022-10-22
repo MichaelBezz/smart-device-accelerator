@@ -1,6 +1,7 @@
 import {iosVhFix} from './utils/ios-vh-fix.js';
-import {checkWebp} from './modules/background-webp.js';
-import {createSmoothScroll} from './modules/scroll.js';
+import {checkWebpFormat} from './utils/webp-format.js';
+import {createSmoothScroll} from './utils/scroll-smooth.js';
+import {initializeToggleContent} from './modules/about.js';
 import {initModals} from './modules/modals/init-modals.js';
 
 // ---------------------------------
@@ -11,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   iosVhFix();
-  checkWebp();
+  checkWebpFormat();
   createSmoothScroll();
 
   // Modules
@@ -20,7 +21,22 @@ window.addEventListener('DOMContentLoaded', () => {
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
+    const breakpoint = window.matchMedia('(max-width:767px)');
+
+    const breakpointChecker = () => {
+      if (breakpoint.matches) {
+        initializeToggleContent(true);
+      } else {
+        initializeToggleContent();
+      }
+    };
+
+    breakpoint.addListener(breakpointChecker);
+    breakpointChecker();
+
     initModals();
+
+    // window.addEventListener('resize', breakpointChecker);
   });
 });
 
