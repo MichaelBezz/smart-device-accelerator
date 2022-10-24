@@ -1,10 +1,10 @@
 import {iosVhFix} from './utils/ios-vh-fix.js';
 import {checkWebpFormat} from './utils/webp-format.js';
 import {createSmoothScroll} from './utils/scroll-smooth.js';
+import {initializeLocalStorage} from './utils/local-storage.js';
 import {initModals} from './modules/modals/init-modals.js';
 import {initializeToggleContent} from './modules/about.js';
 import {setModalFormFocus, initializeFormsValidation} from './modules/form.js';
-import {initializeLocalStorage} from './modules/local-storage.js';
 import {initializeAccordion} from './modules/footer.js';
 
 // ---------------------------------
@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   iosVhFix();
   checkWebpFormat();
   createSmoothScroll();
+  initializeLocalStorage();
 
   // Modules
   // ---------------------------------
@@ -41,7 +42,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
     setModalFormFocus();
     initializeFormsValidation();
-    initializeLocalStorage();
 
     window.addEventListener('resize', breakpointChecker);
   });
