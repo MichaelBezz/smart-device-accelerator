@@ -73,3 +73,317 @@
     grid-template-columns: minmax(270px, 604px);
   }
 }
+
+.products__link {
+  position: relative;
+  display: block;
+  min-height: 650px;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: cover, cover;
+
+  &::after {
+    position: absolute;
+    right: 1px;
+    bottom: 0;
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-color: $color-deep-sky-blue;
+    background-image: url("../img/decor/arrow-button.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    border-radius: 4px 0 0 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: auto;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-deep-sky-blue;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    opacity: 0.6;
+    outline: none;
+  }
+
+  @include vp-1023 {
+    min-height: 250px;
+  }
+
+  @include vp-767 {
+    &::after {
+      right: 0;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+// класс js-webp-exception - это служебный класс для определения поддержки формата webp
+// он не используются для стилизации этого блока, нужен для оптимизации фонового изображения
+.products__link--production {
+  background-image:
+    url("../img/decor/product-mask.svg"),
+    url("../img/product/product-desktop-1.webp");
+
+  .js-webp-exception & {
+    background-image:
+      url("../img/decor/product-mask.svg"),
+      url("../img/product/product-desktop-1.png");
+  }
+
+  @include vp-1023 {
+    background-image:
+      url("../img/decor/product-mask.svg"),
+      url("../img/product/product-tablet-1.webp");
+
+    .js-webp-exception & {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-tablet-1.png");
+    }
+  }
+
+  @include vp-767 {
+    background-image:
+      url("../img/decor/product-mask.svg"),
+      url("../img/product/product-mobile-1.webp");
+
+    .js-webp-exception & {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-mobile-1.png");
+    }
+  }
+
+  @include retina {
+    @include vp-767 {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-mobile-1@2x.webp");
+
+      .js-webp-exception & {
+        background-image:
+          url("../img/decor/product-mask.svg"),
+          url("../img/product/product-mobile-1@2x.png");
+      }
+    }
+
+    @include vp-1023 {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-tablet-1@2x.webp");
+
+      .js-webp-exception & {
+        background-image:
+          url("../img/decor/product-mask.svg"),
+          url("../img/product/product-tablet-1@2x.png");
+      }
+    }
+
+    @include vp-1024 {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-desktop-1@2x.webp");
+
+      .js-webp-exception & {
+        background-image:
+          url("../img/decor/product-mask.svg"),
+          url("../img/product/product-desktop-1@2x.png");
+      }
+    }
+  }
+}
+
+.products__link--montage {
+  background-image:
+    url("../img/decor/product-mask.svg"),
+    url("../img/product/product-desktop-2.webp");
+
+  .js-webp-exception & {
+    background-image:
+      url("../img/decor/product-mask.svg"),
+      url("../img/product/product-desktop-2.png");
+  }
+
+  @include vp-1023 {
+    background-image:
+      url("../img/decor/product-mask.svg"),
+      url("../img/product/product-tablet-2.webp");
+
+    .js-webp-exception & {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-tablet-2.png");
+    }
+  }
+
+  @include vp-767 {
+    background-image:
+      url("../img/decor/product-mask.svg"),
+      url("../img/product/product-mobile-2.webp");
+
+    .js-webp-exception & {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-mobile-2.png");
+    }
+  }
+
+  @include retina {
+    @include vp-767 {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-mobile-2@2x.webp");
+
+      .js-webp-exception & {
+        background-image:
+          url("../img/decor/product-mask.svg"),
+          url("../img/product/product-mobile-2@2x.png");
+      }
+    }
+
+    @include vp-1023 {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-tablet-2@2x.webp");
+
+      .js-webp-exception & {
+        background-image:
+          url("../img/decor/product-mask.svg"),
+          url("../img/product/product-tablet-2@2x.png");
+      }
+    }
+
+    @include vp-1024 {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-desktop-2@2x.webp");
+
+      .js-webp-exception & {
+        background-image:
+          url("../img/decor/product-mask.svg"),
+          url("../img/product/product-desktop-2@2x.png");
+      }
+    }
+  }
+}
+
+.products__link--part {
+  background-image:
+    url("../img/decor/product-mask.svg"),
+    url("../img/product/product-desktop-3.webp");
+
+  .js-webp-exception & {
+    background-image:
+      url("../img/decor/product-mask.svg"),
+      url("../img/product/product-desktop-3.png");
+  }
+
+  @include vp-1023 {
+    background-image:
+      url("../img/decor/product-mask.svg"),
+      url("../img/product/product-tablet-3.webp");
+
+    .js-webp-exception & {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-tablet-3.png");
+    }
+  }
+
+  @include vp-767 {
+    background-image:
+      url("../img/decor/product-mask.svg"),
+      url("../img/product/product-mobile-3.webp");
+
+    .js-webp-exception & {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-mobile-3.png");
+    }
+  }
+
+  @include retina {
+    @include vp-767 {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-mobile-3@2x.webp");
+
+      .js-webp-exception & {
+        background-image:
+          url("../img/decor/product-mask.svg"),
+          url("../img/product/product-mobile-3@2x.png");
+      }
+    }
+
+    @include vp-1023 {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-tablet-3@2x.webp");
+
+      .js-webp-exception & {
+        background-image:
+          url("../img/decor/product-mask.svg"),
+          url("../img/product/product-tablet-3@2x.png");
+      }
+    }
+
+    @include vp-1024 {
+      background-image:
+        url("../img/decor/product-mask.svg"),
+        url("../img/product/product-desktop-3@2x.webp");
+
+      .js-webp-exception & {
+        background-image:
+          url("../img/decor/product-mask.svg"),
+          url("../img/product/product-desktop-3@2x.png");
+      }
+    }
+  }
+}
+
+.products__subtitle {
+  margin: 0;
+  padding: 46px 40px 68px;
+  font-family: $ff-secondary;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $color-default-white;
+
+  @include vp-1023 {
+    padding: 36px 46px 60px;
+  }
+
+  @include vp-767 {
+    padding: 26px 30px 40px;
+    font-size: 18px;
+    line-height: 1.67;
+  }
+}
+
+.product__title-br {
+  &--tablet {
+    display: none;
+  }
+
+  @include vp-1023 {
+    display: none;
+
+    &--tablet {
+      display: inline;
+    }
+  }
+}
