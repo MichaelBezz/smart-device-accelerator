@@ -20,7 +20,7 @@ export const setModalFormFocus = () => {
 };
 
 const initializeValidation = (form) => {
-  const formPhone = form.querySelector('#form-phone');
+  const formPhone = form.querySelector('[name="customer-phone"]');
 
   if (formPhone) {
     const phonePattern = /[0-9]/;
