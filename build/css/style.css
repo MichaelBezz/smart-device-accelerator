@@ -1706,6 +1706,7 @@ button,
 
 .group__link {
   display: block;
+  max-width: 204px;
   padding: 4px 0;
   font-size: 16px;
   line-height: 1.35;
@@ -1731,6 +1732,7 @@ button,
 }
 
 .group--contact .group__link {
+  max-width: initial;
   padding: 3px 5px;
 }
 
@@ -2198,7 +2200,6 @@ button,
   }
 
   .group--contact .group__link {
-    max-width: initial;
     padding: 3px 2px;
   }
 }
