@@ -33,6 +33,7 @@
   }
 
   @include vp-767 {
+    max-width: 260px;
     margin-bottom: 30px;
     font-size: 28px;
     line-height: 1.4;
@@ -354,6 +355,7 @@
 }
 
 .products__subtitle {
+  max-width: 270px;
   margin: 0;
   padding: 46px 40px 68px;
   font-family: $ff-secondary;
@@ -364,26 +366,14 @@
   color: $color-default-white;
 
   @include vp-1023 {
+    max-width: 242px;
     padding: 36px 46px 60px;
   }
 
   @include vp-767 {
+    max-width: 194px;
     padding: 26px 30px 40px;
     font-size: 18px;
     line-height: 1.67;
-  }
-}
-
-.product__title-br {
-  &--tablet {
-    display: none;
-  }
-
-  @include vp-1023 {
-    display: none;
-
-    &--tablet {
-      display: inline;
-    }
   }
 }

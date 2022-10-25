@@ -110,6 +110,10 @@
   list-style: none;
 }
 
+.group__item {
+  display: flex;
+}
+
 .group__link {
   display: block;
   padding: 4px 0;
@@ -135,6 +139,10 @@
     outline: none;
   }
 
+  @include vp-1023 {
+    max-width: 240px;
+  }
+
   @include vp-767 {
     font-size: 14px;
     line-height: 1.35;
@@ -154,6 +162,7 @@
   }
 
   @include vp-1023 {
+    max-width: initial;
     padding: 3px 2px;
   }
 

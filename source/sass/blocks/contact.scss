@@ -12,6 +12,10 @@
 }
 
 .contact__item {
+  display: flex;
+}
+
+.contact__link {
   position: relative;
   display: flex;
   align-items: center;
@@ -46,11 +50,11 @@
   }
 }
 
-.contact__item:active .contact__icon {
+.contact__link:active .contact__icon {
   fill: $color-silver;
 }
 
-.contact__item span {
+.contact__link span {
   @include vp-1023 {
     position: absolute;
     width: 1px;

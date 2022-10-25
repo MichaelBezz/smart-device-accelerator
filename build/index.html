@@ -13,7 +13,7 @@
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicon/favicon-180.png">
-    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">
   </head>
 
   <body>
@@ -27,20 +27,24 @@
             </picture>
           </a>
 
-          <div class="header__contact contact">
-            <a class="contact__item contact__item--email" href="mailto:info@sd.ru">
-              <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
-                <use xlink:href="./img/sprite_auto.svg#icon-email"></use>
-              </svg>
-              <span>info@sd.ru</span>
-            </a>
-            <a class="contact__item contact__item--phone" href="tel:+74950005252">
-              <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
-                <use xlink:href="./img/sprite_auto.svg#icon-phone"></use>
-              </svg>
-              <span>+7 (495) 000 52 52</span>
-            </a>
-          </div>
+          <ul class="header__contact contact">
+            <li class="contact__item">
+              <a class="contact__link" href="mailto:info@sd.ru">
+                <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                  <use xlink:href="./img/sprite_auto.svg#icon-email"></use>
+                </svg>
+                <span>info@sd.ru</span>
+              </a>
+            </li>
+            <li class="contact__item">
+              <a class="contact__link" href="tel:+74950005252">
+                <svg class="contact__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                  <use xlink:href="./img/sprite_auto.svg#icon-phone"></use>
+                </svg>
+                <span>+7 (495) 000 52 52</span>
+              </a>
+            </li>
+          </ul>
 
           <a class="header__button button button--dark" href="#" data-open-modal="feedback">Заказать звонок</a>
         </div>
@@ -52,7 +56,7 @@
         <section class="intro">
           <div class="intro__wrapper container">
             <h2 class="intro__title">Печатные платы</h2>
-            <p class="intro__text">производство и&nbsp;монтаж, поставка комплектующих,<br> блоков и&nbsp;модулей</p>
+            <p class="intro__text">производство и&nbsp;монтаж, поставка комплектующих, блоков и&nbsp;модулей</p>
             <a class="intro__button button" href="#feedback">
               <span class="button__text">Получить бесплатную консультацию</span>
               <span class="button__text button__text--mobile">Бесплатная консультация</span>
@@ -129,23 +133,23 @@
           <div class="products__wrapper container">
             <h2 class="products__title">
               <span class="products__title-text">Smart Device предлагает следующие товары и&nbsp;услуги</span>
-              <span class="products__title-text products__title-text--mobile">Товары и&nbsp;услуги<br> Smart Device</span>
+              <span class="products__title-text products__title-text--mobile">Товары и&nbsp;услуги Smart Device</span>
             </h2>
 
             <ul class="products__list">
               <li class="products__item">
                 <a class="products__link products__link--production" href="#">
-                  <h3 class="products__subtitle">Производство<br> печатных&nbsp;плат</h3>
+                  <h3 class="products__subtitle">Производство печатных&nbsp;плат</h3>
                 </a>
               </li>
               <li class="products__item">
                 <a class="products__link products__link--montage" href="#">
-                  <h3 class="products__subtitle">Монтаж<br class="product__title-br product__title-br--tablet"> печатных<br class="product__title-br"> плат</h3>
+                  <h3 class="products__subtitle">Монтаж печатных плат</h3>
                 </a>
               </li>
               <li class="products__item">
                 <a class="products__link products__link--part" href="#">
-                  <h3 class="products__subtitle">Комплектующие<br> для светотехники</h3>
+                  <h3 class="products__subtitle">Комплектующие для&nbsp;светотехники</h3>
                 </a>
               </li>
             </ul>
@@ -234,7 +238,7 @@
                   <a class="group__link" href="#">Продукты</a>
                 </li>
                 <li class="group__item">
-                  <a class="group__link" href="#">Производство печатных<br> плат</a>
+                  <a class="group__link" href="#">Производство печатных плат</a>
                 </li>
                 <li class="group__item">
                   <a class="group__link" href="#">Монтаж печатных плат</a>
@@ -297,7 +301,7 @@
               <label class="visually-hidden" for="md-form-name">Введите Ваше имя.</label>
             </p>
             <p class="form__control form__control--input form__control--phone">
-              <input id="md-form-phone" type="tel" name="customer-phone" placeholder="Телефон" data-md-form-storage required>
+              <input id="md-form-phone" type="tel" name="customer-phone" placeholder="Телефон" minlength="14" maxlength="14" data-md-form-storage required>
               <label class="visually-hidden" for="md-form-phone">Введите Ваш телефон.</label>
             </p>
             <p class="form__control form__control--textarea form__control--modal">

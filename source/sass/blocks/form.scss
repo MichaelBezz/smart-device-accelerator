@@ -222,6 +222,11 @@
   }
 }
 
+.form__control--modal label {
+  padding: 0 5px;
+  padding-left: 36px;
+}
+
 .form__control--checkbox input:checked + label {
   &::before {
     background-image: url("../img/decor/arrow-checkbox.svg");
@@ -259,6 +264,7 @@
   border-color: $color-black-pearl;
 
   &--modal {
+    margin-top: -4px;
     max-width: 100%;
   }
 
