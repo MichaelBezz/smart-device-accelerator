@@ -802,6 +802,7 @@ button,
 .header__contact {
   min-width: 480px;
   margin: 0 auto;
+  padding: 0;
 }
 
 .header__button {
@@ -820,6 +821,12 @@ button,
 }
 
 .contact__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact__link {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -834,25 +841,25 @@ button,
   color: #f2f5f7;
 }
 
-.contact__item:hover {
+.contact__link:hover {
   color: #00b2ff;
 }
 
-.contact__item:focus {
+.contact__link:focus {
   outline: auto;
 }
 
-.contact__item:focus-visible {
+.contact__link:focus-visible {
   color: #00b2ff;
   outline: 1px solid #00b2ff;
 }
 
-.contact__item:active {
+.contact__link:active {
   color: #c4c4c4;
   outline: none;
 }
 
-.contact__item:active .contact__icon {
+.contact__link:active .contact__icon {
   fill: #c4c4c4;
 }
 
@@ -910,6 +917,7 @@ button,
 }
 
 .intro__text {
+  max-width: 650px;
   margin: 0;
   margin-bottom: 46px;
   font-size: 22px;
@@ -1167,6 +1175,7 @@ button,
 }
 
 .products__subtitle {
+  max-width: 270px;
   margin: 0;
   padding: 46px 40px 68px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
@@ -1175,10 +1184,6 @@ button,
   line-height: 1.5;
   font-weight: 400;
   color: #ffffff;
-}
-
-.product__title-br--tablet {
-  display: none;
 }
 
 .feedback {
@@ -1483,6 +1488,11 @@ button,
   transform: translateY(-60%);
 }
 
+.form__control--modal label {
+  padding: 0 5px;
+  padding-left: 36px;
+}
+
 .form__control--checkbox input:checked + label::before {
   background-image: url("../img/decor/arrow-checkbox.svg");
   background-repeat: no-repeat;
@@ -1527,6 +1537,7 @@ button,
 }
 
 .form__button--modal {
+  margin-top: -4px;
   max-width: 100%;
 }
 
@@ -1687,8 +1698,15 @@ button,
   list-style: none;
 }
 
+.group__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .group__link {
   display: block;
+  max-width: 204px;
   padding: 4px 0;
   font-size: 16px;
   line-height: 1.35;
@@ -1714,6 +1732,7 @@ button,
 }
 
 .group--contact .group__link {
+  max-width: initial;
   padding: 3px 5px;
 }
 
@@ -1921,13 +1940,13 @@ button,
     column-gap: 20px;
   }
 
-  .contact__item {
+  .contact__link {
     width: 40px;
     height: 40px;
     padding: 10px;
   }
 
-  .contact__item span {
+  .contact__link span {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -2061,15 +2080,8 @@ button,
   }
 
   .products__subtitle {
+    max-width: 242px;
     padding: 36px 46px 60px;
-  }
-
-  .product__title-br {
-    display: none;
-  }
-
-  .product__title-br--tablet {
-    display: inline;
   }
 
   .feedback::before {
@@ -2181,6 +2193,10 @@ button,
     -webkit-column-gap: 0;
     -moz-column-gap: 0;
     column-gap: 0;
+  }
+
+  .group__link {
+    max-width: 240px;
   }
 
   .group--contact .group__link {
@@ -2372,6 +2388,7 @@ button,
   }
 
   .products__title {
+    max-width: 260px;
     margin-bottom: 30px;
     font-size: 28px;
     line-height: 1.4;
@@ -2421,6 +2438,7 @@ button,
   }
 
   .products__subtitle {
+    max-width: 194px;
     padding: 26px 30px 40px;
     font-size: 18px;
     line-height: 1.67;
