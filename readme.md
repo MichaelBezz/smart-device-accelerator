@@ -7,7 +7,7 @@
 
 ### Демонстрация проекта:
 
-["Smart Device"](https://michaelbezz.github.io/782277-smart-device/) - интернет-магазин комплектующих, блоков и модулей.
+["Smart Device"](https://michaelbezz.github.io/smart-device-accelerator/) - интернет-магазин комплектующих, блоков и модулей.
 
 ---
 
